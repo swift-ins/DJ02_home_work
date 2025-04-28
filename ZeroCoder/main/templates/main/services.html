@@ -1,9 +1,20 @@
 {% extends 'main/base.html' %}
+{% load static %}
 {% block title %}Services{% endblock %}
+
 {% block content %}
 <div class="text-center py-5" style="background-color: #4CAF50; color: white; border-radius: 10px;">
   <div class="text-center">
-    <h1 class="mb-4">Сервис успеха.</h1>
-    <p class="lead">Программа здоровье- 3 уровня успеха.</p>
+    <h1 class="mb-4">Наши цены</h1>
+    <p class="lead">Price list (from 04/2025)</p>
+
+    <!-- Кнопка для открытия прайса -->
+    <a href="{% static 'main/files/price.txt' %}" 
+       download
+       class="btn btn-light mt-4"
+       style="color: #4CAF50; font-weight: bold;">
+       Скачать Price
+    </a>
   </div>
+</div>
 {% endblock %}
