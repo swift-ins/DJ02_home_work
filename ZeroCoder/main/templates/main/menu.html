@@ -1,14 +1,65 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<!-- Подключаем красивый шрифт -->
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+<!-- Навбар -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm animate-navbar">
   <div class="container">
     
-    <a class="navbar-brand" href="/">Наш Сайт</a>
-    <div class="collapse navbar-collapse">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="/services/">Price</a></li>
-        <li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
+    <a class="navbar-brand" href="/" style="font-family: 'Pacifico', cursive; font-size: 28px; color: #4CAF50;">
+      Fresh
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link {% if request.path == '/' %}active text-success{% endif %}" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if request.path == '/about/' %}active text-success{% endif %}" href="/about/">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if request.path == '/services/' %}active text-success{% endif %}" href="/services/">Price</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if request.path == '/contact/' %}active text-success{% endif %}" href="/contact/">Contact</a>
+        </li>
       </ul>
     </div>
   </div>
 </nav>
+
+<!-- Стили -->
+<style>
+  /* Плавная анимация появления */
+  .animate-navbar {
+    animation: fadeInDown 1s ease forwards;
+  }
+
+  @keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Стиль для ссылок */
+  .nav-link {
+    margin: 0 12px;
+    transition: color 0.3s, transform 0.3s;
+    font-weight: 500;
+  }
+
+  /* Анимация при наведении */
+  .nav-link:hover {
+    color: #4CAF50;
+    transform: scale(1.1);
+  }
+
+  /* Активная ссылка */
+  .nav-link.active {
+    font-weight: bold;
+    color: #4CAF50 !important;
+  }
+</style>
