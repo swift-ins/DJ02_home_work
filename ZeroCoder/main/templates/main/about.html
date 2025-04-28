@@ -1,12 +1,81 @@
 {% extends 'main/base.html' %}
 {% block title %}About Us{% endblock %}
+
 {% block content %}
 <div class="text-center py-5" style="background-color: #4CAF50; color: white; border-radius: 10px;">
   <div class="text-center">
     <h1 class="mb-4">О нас</h1>
-    <p class="lead">Корпорация "Fresh" продлит молодость и дарит здоровье.</p>
-    <p class="lead">Становись членом нашей команды и  веди здоровый образ жизни.</p>
+    <p class="lead">Корпорация "Fresh" заботится о тебе.</p>
+    <p class="lead">Попробуй косметику "Fresh". 4 линии "Fresh" для всей семьи.</p>
   </div>
+
+  <div class="container my-5">
+    <div class="row justify-content-center">
+      
+      <!-- Карточка 1 -->
+      <div class="col-md-3 mb-4">
+        <div class="card h-100">
+          <div class="card-body text-center">
+            <h5 class="card-title">Her</h5>
+            <button class="btn btn-success mt-2" onclick="toggleDescription('desc1')">Подробнее</button>
+            <p id="desc1" class="card-text mt-3" style="display: none;">
+              Линия "Fresh for Her" заботится о красоте и здоровье каждой женщины. Натуральные ингредиенты для сияния кожи.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Карточка 2 -->
+      <div class="col-md-3 mb-4">
+        <div class="card h-100">
+          <div class="card-body text-center">
+            <h5 class="card-title">For Him</h5>
+            <button class="btn btn-success mt-2" onclick="toggleDescription('desc2')">Подробнее</button>
+            <p id="desc2" class="card-text mt-3" style="display: none;">
+              Линия "Fresh for Him" создана специально для мужчин: ухоженная кожа и свежий вид каждый день.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Карточка 3 -->
+      <div class="col-md-3 mb-4">
+        <div class="card h-100">
+          <div class="card-body text-center">
+            <h5 class="card-title">For Baby</h5>
+            <button class="btn btn-success mt-2" onclick="toggleDescription('desc3')">Подробнее</button>
+            <p id="desc3" class="card-text mt-3" style="display: none;">
+              Линия "Fresh for Baby" — мягкий уход для самой нежной кожи. Только натуральные компоненты без добавок.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Карточка 4 -->
+      <div class="col-md-3 mb-4">
+        <div class="card h-100">
+          <div class="card-body text-center">
+            <h5 class="card-title">For Teenager</h5>
+            <button class="btn btn-success mt-2" onclick="toggleDescription('desc4')">Подробнее</button>
+            <p id="desc4" class="card-text mt-3" style="display: none;">
+              Линия "Fresh for Teenager" помогает сохранить здоровье кожи в период взросления. Чистота и уверенность каждый день.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleDescription(id) {
+  const desc = document.getElementById(id);
+  if (desc.style.display === "none") {
+    desc.style.display = "block";
+  } else {
+    desc.style.display = "none";
+  }
+}
+</script>
 {% endblock %}
-
-
